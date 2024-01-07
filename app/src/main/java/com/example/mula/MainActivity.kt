@@ -1,9 +1,11 @@
 package com.example.mula
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
@@ -30,6 +32,26 @@ class MainActivity : AppCompatActivity() {
                 handler.postDelayed(runnable, 3000)
             }
         })
+
+        // Find the button by its ID
+        val buttonStartActivity: Button = findViewById(R.id.btn_login)
+
+        // Set a click listener for the button
+        buttonStartActivity.setOnClickListener {
+            // Start the new activity when the button is clicked
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+        }
+
+        // Find the button by its ID
+        val buttonRegisterActivity: Button = findViewById(R.id.btn_register)
+
+        // Set a click listener for the button
+        buttonRegisterActivity.setOnClickListener {
+            // Start the new activity when the button is clicked
+            val intent2 = Intent(this, Register::class.java)
+            startActivity(intent2)
+        }
 
     }
 
